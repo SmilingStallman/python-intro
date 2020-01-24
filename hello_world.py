@@ -26,28 +26,28 @@ When I realized that, I was no longer afraid of losing my body."
 """)
 
 #repeat string
-print(3 * "ee" + 2 * 'aa')
+print(3 * "ee" + 2 * 'aa')  #eeeeeeaaaa
 
 #string auto-contanation when strings adjacent
 long_string = ('this is a very long string '
                 'it is all one string')
-print(long_string)
+print(long_string)      #this is a very long string it is all one string
 
 #string char access, negative num to start from right (read only access)
-print(long_string[-1])
+print(long_string[-1]) #g
 
 slice = 'having slice time'
-print(slice[:2])      #no start slices from [0]. Exlusive end char num.
-print(slice[0: 120])  #out of bounds num slices to end/start automatically
+print(slice[:2])      #no start slices from [0]. Exlusive end char num. prints ha
+print(slice[0: 120])  #out of bounds num slices to end/start automatically. prints having slice time
 
 #uppercase each word
 person = 'gerald thomas'.title()
-print(person)
+print(person) #Gerald Thomas
 
 #template strings have f before, then calls and vars wrapped in {} inside string
-print(f'{person} {slice} {"today".upper()}')
+print(f'{person} {slice} {"today".upper()}') Gerald Thomas having slice time TODAY
 
-print(' test  '.strip() + 'test')
+print(' test  '.strip() + 'test') #testtest
 
 # >= 1 chapter python docs + "crash course" (12 chapters + 11 chapters)
 # >= 1 chapter react docs (11 chapters)

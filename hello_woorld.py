@@ -219,7 +219,15 @@ my_list.insert(2, 'A')
 print(my_list)
 
 print("""\n#if uses 'if ... :', 'elif ... :', 'else:' with no ( ).
-#Python indentation (equal spaces or tabbed) based blocks instead of {} based""")
+#Python indentation (equal spaces or tabbed) based blocks instead of {} based:
+>>> x, y = 0, 1
+>>> if x > y:
+>>>    print('x > y')
+>>>    print('check the indentation')
+>>> elif x < y:
+>>>    print('x < y')
+>>> else:
+>>>    print('x == y')""")
 x, y = 0, 1
 if x > y:
    print('x > y')
@@ -230,7 +238,7 @@ else:
    print('x == y')
 
 print("""\n#loop using 'for index in iterable:'
-#index is current index, and loop ends when iterable ends
+#index is current index, and loop ends when iterable ends:
 >>> ints = [1, 2, 5, 9]
 >>> for int in ints:
 >>>     print(int)""")
@@ -256,7 +264,7 @@ for i in range(-20, 40, 10):
    print(i)
 
 print("""\n#for loops can run with an else clauses that excutes on loop completion
-#if loop executes due to break, then else will not run...loop just breaks and exits:\n
+#if loop executes due to break, then else will not run...loop just breaks and exits:
 >>> for i in range(3):
 >>>     print("feels")
 >>>     if(i == 2):
@@ -300,6 +308,115 @@ for i in range(4):
     if(i == 2):
         continue
     print(i)
+
+#countries to visit
+print("""\n#Sort methods called on list called on and change their state:
+>>> countries = ['France', 'Germany', 'Poland', 'Peru', 'Sweden']
+>>> print(countries)
+>>> print(sorted(countries))
+>>> print(countries)""")
+countries = ['France', 'Germany', 'Poland', 'Peru', 'Sweden']
+print(countries)
+print(sorted(countries))
+print(countries)
+
+print("""\n#Methods where the list is passed in as an arg generally sort and return a copy of the list
+#Such methods do not change the state of the original list:
+>>> countries.sort()
+>>> print(countries)""")
+countries.sort()
+print(countries)
+
+print("""\n#Reverse list by calling reverse() on it:
+>>> countries.reverse()
+>>> print(countries)""")
+
+print("""\n#pass in arg/val reverse=True to .sort() to sort in reverse alpha:
+>>> countries.sort(reverse=True)
+>>> print(countries)""")
+countries.sort(reverse=True)
+print(countries)
+
+#list comprehension
+print("""\n#List comprehension allows you to make a list with a for loop
+#logic is similar for a map function with left hand acting as expression to set value for each item in iterable:
+>>> num_list = [num + num for num in range(1,11)]
+>>> print(num_list)""")
+num_list = [num + num for num in range(1,11)]
+print(num_list)
+
+print("""\n#list of nums divisable by 3 via list comprehension:
+>>> num_list = [num for num in range(3, 31, 3)]
+>>> print(num_list)""")
+num_list = [num for num in range(3, 31, 3)]
+print(num_list)
+
+#looping through sliced num_list
+print("""\n#can loop through slice, as slicing just returns a list:
+>>> for num in num_list[4:8]:
+>>>     print(num)""")
+for num in num_list[4:8]:
+    print(num)
+
+print("""\n#some list functions useful for numerical lists:
+>>> print(min(num_list))
+>>> print(max(num_list))
+>>> print(sum(num_list))""")
+print(min(num_list))
+print(max(num_list))
+print(sum(num_list))
+
+print("""\n#A tuple is a list, but immutable. Note the () instead of []
+#Trying to change the value of a tuple index/value will throw an error:
+>>> tuple = (1, 2, 3, 4, 5)""")
+tuple = (1, 2, 3, 4, 5)
+#tuple[2] = 'new'
+
+print("""\n#since no constant vars in python, can change val of var referencing tuple:
+>>> tuple = (5, 4, 3, 2, 1)
+>>> print(tuple)""")
+tuple = (5, 4, 3, 2, 1)
+print(tuple)
+
+print("""\n#for && and || operators, Python uses and, or:
+>>> if(3 >= 2 and 'test' != 'Test'):
+>>>     print('and conditions satisfied')""")
+if(3 >= 2 and 'test' != 'Test'):
+    print('and conditions satisfied')
+
+print("""\n>>> if(3 >= 4 or 'test' == 'test'):
+>>>     print('one or both or conditions satified')""")
+if(3 >= 4 or 'test' == 'test'):
+    print('one or both or conditions satified')
+
+print("""\n#in operator checks for inclusion in collection with a boolean return:
+>>> print(3 in num_list)""")
+print(3 in num_list)
+
+
+#if not empty list
+print("""\n#calling 'if' on a list will return False if empty list, True if not empty:
+>>> empty_list = []
+>>> if empty_list:
+>>>     print('List is not empty')
+>>> else:
+>>>     print('List is empty')""")
+empty_list = []
+if empty_list:
+    print('List is not empty')
+else:
+    print('List is empty')
+
+print("""\n>>> if tuple:
+>>>     print('Tuple is not empty')
+>>> else:
+>>>     print('Tuple is empty')""")
+if tuple:
+    print('Tuple is not empty')
+else:
+    print('Tuple is empty')
+
+
 
 print("""\n""")
 
